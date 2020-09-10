@@ -25,12 +25,13 @@
         vr-mode-ui="enabled: false"
 	embedded
 	arjs='sourceType: webcam; debugUIEnabled: false;'>
-        <a-box
+        <a-cylinder
            clickhandler
            material="color: red;"
-           scale="5 5 5"
+           height="0.1"
+	   radius="3"
            gps-entity-place="latitude: 37.377126; longitude: -122.033131;">
-        </a-box>
+        </a-cylinder>
         <a-camera gps-camera rotation-reader></a-camera>
       </a-scene>
 </body>
