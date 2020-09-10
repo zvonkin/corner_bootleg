@@ -13,7 +13,7 @@
     AFRAME.registerComponent('clickhandler', {
         init: function() {
             this.el.addEventListener('click', () => {
-                alert('Clicked!')
+                window.open("https://www.youtube.com/watch?v=iik25wqIuFo");
             });
     }});
 </script>
@@ -25,11 +25,10 @@
         vr-mode-ui="enabled: false"
 	embedded
 	arjs='sourceType: webcam; debugUIEnabled: false;'>
-
         <a-box
            clickhandler
            material="color: red;"
-           scale="20 20 20"
+           scale="5 5 5"
            gps-entity-place="latitude: 37.377037; longitude: -122.032998;">
         </a-box>
         <a-camera gps-camera rotation-reader></a-camera>
