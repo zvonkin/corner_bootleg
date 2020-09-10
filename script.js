@@ -37,7 +37,7 @@ function setToken(token) {
     token.setAttribute('rotation', '0 180 90');
     token.setAttribute('shadow', '');
     token.setAttribute('rickroll', '');
-    token.setAttribute('material', 'src: ./assets/paden.jpg');
+    token.setAttribute('material', `src: ./assets/paden.jpg`);
     
     let animation = document.createElement('a-animation');
     setRotation(animation);
@@ -54,7 +54,7 @@ function renderPlaces(places) {
 
         let token = document.createElement('a-cylinder');
         token.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-        scene.setAttribute('raycaster', "objects: [rickroll];");
+        scene.setAttribute('raycaster', `objects: [rickroll];`);
         setToken(token);
         scene.appendChild(token);
     });
