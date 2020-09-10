@@ -1,3 +1,10 @@
+AFRAME.registerComponent("rickroll", {
+    init: function() {
+        this.el.addEventListener("click", () => {
+            window.open("https://www.youtube.com/watch?v=iik25wqIuFo");
+        });
+}});
+
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = 'Select The Link';
@@ -9,38 +16,37 @@ window.onload = () => {
 function staticLoadPlaces() {
     return [
         {
-            name: 'RickRoll',
+            name: 'Paden',
             location: {
                 lat: 37.377264,
                 lng: -122.033087
             },
+            handler: 'rickroll'
         },
     ];
 }
 
-var videoLinks = [
-    {
-        href: 'https://www.youtube.com/watch?v=iik25wqIuFo',
-        text: 'Get Rickrolled',
-    },
-    {
-        href: 'https://www.youtube.com/watch?v=j5C6X9vOEkU',
-        text: 'Banana-Phone!
-    },
-];
+        <a-cylinder
+	    clickhandler			    
+	    material="src: ./assets/paden.jpg"
+            radius="5"
+            height="1"
+            rotation="0 180 90"
+            shadow
+            gps-entity-place="latitude: 37.377106; longitude: -122.033112;">
+        </a-cylinder>
+
+function setToken(token, handler) {
+    token.setAttribute('radius', `5`);
+    token.setAttribute('height', `1`);
+    token.setAttribute('rotation', `0 180 90`)
+    token.setAttribute('shadow', ``)
+    if (handler) {
+        token.setAttribute(handler, ``)
+    }
+}
 
 var index = 0;
-
-var setVideoLink = function (video_link, alink) {
-    if (model.text) {
-        alink.setAttribute('title', video_link.text);
-    }
-    alink.setAttribute('href', video_link.href);
-
-    const div = document.querySelector('.instructions');
-    div.innerText = video_link.text;    
-};
-
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
 
@@ -48,18 +54,9 @@ function renderPlaces(places) {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
 
-        let videoLink = document.createElement('a-link');
-        videoLink.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-
-        setVideoLink(videoLinks[index], videoLink);
-
-        document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-            var videoLink = document.querySelector('[gps-entity-place]');
-            index++;
-            var newIndex = index % videoLinks.length;
-            setVideoLink(videoLinks[index], videoLink);
-        });
-
-        scene.appendChild(videoLink);
+        let token = document.createElement('a-cylinder');
+        token.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+        setToken(token, place.handler)                
+        scene.appendChild(token);
     });
 }
