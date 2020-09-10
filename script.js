@@ -18,45 +18,24 @@ function staticLoadPlaces() {
     ];
 }
 
-var models = [
+var videoLinks = [
     {
-        url: './assets/magnemite/scene.gltf',
-        scale: '0.5 0.5 0.5',
-        info: 'Magnemite, Lv. 5, HP 10/10',
-        rotation: '0 180 0',
+        href: 'https://www.youtube.com/watch?v=iik25wqIuFo',
+        text: 'Get Rickrolled',
     },
     {
-        url: './assets/articuno/scene.gltf',
-        scale: '0.2 0.2 0.2',
-        rotation: '0 180 0',
-        info: 'Articuno, Lv. 80, HP 100/100',
-    },
-    {
-        url: './assets/dragonite/scene.gltf',
-        scale: '0.08 0.08 0.08',
-        rotation: '0 180 0',
-        info: 'Dragonite, Lv. 99, HP 150/150',
+        href: 'https://www.youtube.com/watch?v=j5C6X9vOEkU',
+        text: 'Banana-Phone!
     },
 ];
 
-var modelIndex = 0;
-var setModel = function (model, entity) {
-    if (model.scale) {
-        entity.setAttribute('scale', model.scale);
+var index = 0;
+
+var setVideoLink = function (video_link, alink) {
+    if (model.text) {
+        alink.setAttribute('title', video_link.text);
     }
-
-    if (model.rotation) {
-        entity.setAttribute('rotation', model.rotation);
-    }
-
-    if (model.position) {
-        entity.setAttribute('position', model.position);
-    }
-
-    entity.setAttribute('gltf-model', model.url);
-
-    const div = document.querySelector('.instructions');
-    div.innerText = model.info;
+    alink.setAttribute('href', video_link.href);
 };
 
 function renderPlaces(places) {
@@ -66,20 +45,18 @@ function renderPlaces(places) {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
 
-        let model = document.createElement('a-entity');
-        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+        let videoLink = document.createElement('a-link');
+        videoLink.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
-        setModel(models[modelIndex], model);
-
-        model.setAttribute('animation-mixer', '');
+        setVideoLink(videoLinks[index], videoLink);
 
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-            var entity = document.querySelector('[gps-entity-place]');
-            modelIndex++;
-            var newIndex = modelIndex % models.length;
-            setModel(models[newIndex], entity);
+            var videoLink = document.querySelector('[gps-entity-place]');
+            index++;
+            var newIndex = index % videoLinks.length;
+            setVideoLink(videoLinks[index], videoLink);
         });
 
-        scene.appendChild(model);
+        scene.appendChild(videoLink);
     });
 }
