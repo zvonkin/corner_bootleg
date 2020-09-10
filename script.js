@@ -39,7 +39,7 @@ function setToken(token, handler) {
     if (handler) {
         token.setAttribute(`${handler}`, '');
     }
-    let animation = document.querySelector('a-animation');
+    let animation = document.createElement('a-animation');
     setRotation(animation);
     token.appendChild(animation);
 }
