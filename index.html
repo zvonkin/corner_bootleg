@@ -27,13 +27,16 @@
 	      arjs="sourceType: webcam; debugUIEnabled: false;">
         <a-cylinder
             material="src: https://cdn.glitch.com/e5ac748f-245a-438c-8672-0288070ca795%2Fpaden.jpg?v=1599729386707"
-            radius="50"
-            height="10"
+            radius="5"
+            height="1"
             rotation="0 100 90"
             shadow
-            gps-entity-place="latitude: 37.377110; longitude: -122.032994;">
+            gps-entity-place="latitude: 41.890339; longitude: 12.492586;">
         </a-cylinder>
-        <a-camera gps-camera rotation-reader></a-camera>
+        <a-camera
+          gps-camera="simulateLatitude: 41.890890; simulateLongitude: 12.489357;" 
+          rotation-reader>
+      </a-camera>
     </a-scene>
 </body>
 </html>
