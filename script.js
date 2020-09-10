@@ -6,9 +6,6 @@ AFRAME.registerComponent("rickroll", {
 }});
 
 window.onload = () => {
-    const button = document.querySelector('button[data-action="change"]');
-    button.innerText = 'Select The Link';
-
     let places = staticLoadPlaces();
     renderPlaces(places);
 };
