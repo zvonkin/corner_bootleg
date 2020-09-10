@@ -26,7 +26,7 @@ function staticLoadPlaces() {
 function setRotation(animation) {
     animation.setAttribute('attribute', 'rotation');
     animation.setAttribute('dur', '3000');
-    animation.setAttribute('to', '360 0 0');
+    animation.setAttribute('to', `360 0 0`);
     animation.setAttribute('repeat', 'indefinite');
     animation.setAttribute('easing', 'linear');    
 }
@@ -34,7 +34,7 @@ function setRotation(animation) {
 function setToken(token) {
     token.setAttribute('radius', '5');
     token.setAttribute('height', '1');
-    token.setAttribute('rotation', '0 180 90');
+    token.setAttribute('rotation', `0 180 90`);
     token.setAttribute('shadow', '');
     token.setAttribute('rickroll', '');
     token.setAttribute('material', `src: ./assets/paden.jpg`);
