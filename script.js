@@ -23,14 +23,25 @@ function staticLoadPlaces() {
     ];
 }
 
+function setRotation(animation) {
+    animation.setAttribute('attribute', 'rotation');
+    animation.setAttribute('dur', '3000');
+    animation.setAttribute('to', '360 0 0');
+    animation.setAttribute('repeat', 'indefinite');
+    animation.setAttribute('easing', 'linear');    
+}
+
 function setToken(token, handler) {
-    token.setAttribute('radius', `5`);
-    token.setAttribute('height', `1`);
-    token.setAttribute('rotation', `0 180 90`)
-    token.setAttribute('shadow', ``)
+    token.setAttribute('radius', '5');
+    token.setAttribute('height', '1');
+    token.setAttribute('rotation', '0 180 90');
+    token.setAttribute('shadow', '');
     if (handler) {
-        token.setAttribute(handler, ``)
+        token.setAttribute(`${handler}`, '');
     }
+    let animation = document.querySelector('a-animation');
+    setRotation(animation);
+    token.appendChild(animation);
 }
 
 var index = 0;
@@ -43,7 +54,8 @@ function renderPlaces(places) {
 
         let token = document.createElement('a-cylinder');
         token.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-        setToken(token, place.handler)                
+        scene.setAttribute('raycaster', `objects: [${place.handler}];`);
+        setToken(token, place.handler);
         scene.appendChild(token);
     });
 }
