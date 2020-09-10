@@ -36,6 +36,9 @@ var setVideoLink = function (video_link, alink) {
         alink.setAttribute('title', video_link.text);
     }
     alink.setAttribute('href', video_link.href);
+
+    const div = document.querySelector('.instructions');
+    div.innerText = model.info;    
 };
 
 function renderPlaces(places) {
