@@ -9,11 +9,10 @@ window.onload = () => {
 function staticLoadPlaces() {
     return [
         {
-            name: 'Pokèmon',
+            name: 'RickRoll',
             location: {
-                // decomment the following and add coordinates:
-                // lat: <your-latitude>,
-                // lng: <your-longitude>,
+                lat: 37.377264,
+                lng: -122.033087
             },
         },
     ];
