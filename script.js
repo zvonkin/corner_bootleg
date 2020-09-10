@@ -26,16 +26,6 @@ function staticLoadPlaces() {
     ];
 }
 
-        <a-cylinder
-	    clickhandler			    
-	    material="src: ./assets/paden.jpg"
-            radius="5"
-            height="1"
-            rotation="0 180 90"
-            shadow
-            gps-entity-place="latitude: 37.377106; longitude: -122.033112;">
-        </a-cylinder>
-
 function setToken(token, handler) {
     token.setAttribute('radius', `5`);
     token.setAttribute('height', `1`);
