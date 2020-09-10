@@ -31,14 +31,14 @@ function setRotation(animation) {
     animation.setAttribute('easing', 'linear');    
 }
 
-function setToken(token, handler) {
+function setToken(token) {
     token.setAttribute('radius', '5');
     token.setAttribute('height', '1');
     token.setAttribute('rotation', '0 180 90');
     token.setAttribute('shadow', '');
-    if (handler) {
-        token.setAttribute(`${handler}`, '');
-    }
+    token.setAttribute('rickroll', '');
+    token.setAttribute('material', 'src: ./assets/paden.jpg');
+    
     let animation = document.createElement('a-animation');
     setRotation(animation);
     token.appendChild(animation);
@@ -54,8 +54,8 @@ function renderPlaces(places) {
 
         let token = document.createElement('a-cylinder');
         token.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-        scene.setAttribute('raycaster', `objects: [${place.handler}];`);
-        setToken(token, place.handler);
+        scene.setAttribute('raycaster', "objects: [rickroll];");
+        setToken(token);
         scene.appendChild(token);
     });
 }
