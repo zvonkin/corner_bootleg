@@ -1,27 +1,40 @@
+<!--gps-entity-place="latitude: 37.377082; longitude: -122.033037;"-->
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>GeoAR.js demo</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-  </head>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src='../../../build/aframe-ar-nft.js'></script>
+</head>
 
-  <body style="margin: 0; overflow: hidden;">
+<script>
+    AFRAME.registerComponent('clickhandler', {
+        init: function() {
+            this.el.addEventListener('click', () => {
+                alert('Clicked!')
+            });
+    }});
+</script>
+
+<body style='margin: 0; overflow: hidden;'>
     <a-scene
-      vr-mode-ui="enabled: false"
-      embedded
-      arjs="sourceType: webcam; debugUIEnabled: false;"
-    >
-      <a-link
-        href="https://www.youtube.com/watch?v=iik25wqIuFo"
-        title="Click me!"
-        scale="8 8 8"
-        gps-entity-place="latitude: 37.377082; longitude: -122.033037;"
-      ></a-link>
-      <a-camera gps-camera rotation-reader> </a-camera>
-    </a-scene>
-  </body>
-</html>	
+        cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
+        raycaster="objects: [clickhandler];"
+        vr-mode-ui="enabled: false"
+		embedded
+		arjs='sourceType: webcam; debugUIEnabled: false;'>
+
+        <a-box
+            clickhandler
+            material="color: red;"
+            scale="20 20 20"
+            gps-entity-place="latitude: 37.377082; longitude: -122.033037;">
+        </a-box>
+
+        <a-camera gps-camera rotation-reader>
+		</a-camera>
+	</a-scene>
+</body>
