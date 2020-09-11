@@ -22,7 +22,6 @@
     <body style="margin: 0; overflow: hidden;">
         <a-scene
             cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;"
-            token.setAttribute();
             raycaster="objects: [rickroll];"     
             vr-mode-ui="enabled: false"
             embedded
@@ -31,11 +30,11 @@
                     rickroll    
                     gps-entity-place="latitude: 37.377264; longitude: -122.033087;"
                     material="src: ./assets/paden.jpg"
-                    radius="5" height="1" rotation="0 180 90" shadow>
+                    radius="4" height="0.5" rotation="0 180 90" shadow>
                     <a-animation
                         attribute="rotation"
                         dur="3000"
-                        to="360 0 0"
+                        to="0 0 90"
                         repeat="indefinite"
                         easing="linear">
                     </a-animation>	
