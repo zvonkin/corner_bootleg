@@ -29,7 +29,7 @@
 	    <!--gps-entity-place="latitude: 37.377037; longitude: -122.032998;" - Misha -->
                 <a-cylinder
                     rickroll
-	            gps-entity-place="latitude: 37.325283; longitude: -121.876636;"
+	            gps-entity-place="latitude: 37.377037; longitude: -122.032998;"
                     material="src: ./assets/paden.jpg"
                     radius="4" height="0.5"
 	            rotation="0 180 90"
@@ -46,8 +46,8 @@
 	    <!--Misha
             <a-camera gps-camera rotation-reader simulateLatitude="37.377300" simulateLongitude="-122.033200"> </a-camera> 
 		-->
-	    <!--Paden-->
-	    <a-camera gps-camera rotation-reader simulateLatitude="37.325546" simulateLongitude="-121.876838"> </a-camera> 
+	    <!--Paden simulateLatitude="37.325546" simulateLongitude="-121.876838" -->
+	    <a-camera gps-camera rotation-reader gpsMinDistance: 5;> </a-camera> 
 	    </a-scene>
     </body>
 </html>
