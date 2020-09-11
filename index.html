@@ -33,21 +33,18 @@
                     material="src: ./assets/paden.jpg"
                     radius="4" height="0.5"
 	            rotation="0 0 90"
-		    shadow>
-                    <a-animation
-                        attribute="rotation"
-                        dur="500"
-                        to="0 360 90"
-                        repeat="indefinite"
-                        easing="linear">
-                    </a-animation>	
+		    shadow
+	            animation="property: rotation; dur: 2000; from: 0 0 90; to: 0 360 90; repeat: indefinite; easing: linear;>
+			<!--
+			<a-animation attribute="rotation" dur="2000" from="0 0 90" to="0 360 90" repeat="indefinite" easing="linear"></a-animation>	
+                         -->
                 </a-cylinder>
 	    
 	    <!--Misha
             <a-camera gps-camera rotation-reader > </a-camera> 
 		-->
 	    <!--Paden simulateLatitude="37.325546" simulateLongitude="-121.876838" -->
-	    <a-camera gps-camera="simulateLatitude: 37.377300; simulateLongitude: -122.033200; gpsMinDistance: 10;"></a-camera> 
+	    <a-camera gps-camera="simulateLatitude: 37.377300; simulateLongitude: -122.033200; gpsMinDistance: 10; gpsTimeInterval: 300;"></a-camera> 
 	    </a-scene>
     </body>
 </html>
