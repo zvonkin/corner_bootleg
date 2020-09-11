@@ -32,6 +32,7 @@
 			<img id="padenTop" src="./assets/paden.jpg">
 			<img id="padenBottom" src="./assets/paden-down.jpg">
 			<img id="gold" src="./assets/gold.jpeg">
+			<img id="green" src="./assets/green.jpeg">
 		</a-assets>
                 <a-cylinder
                     rickroll
@@ -42,7 +43,19 @@
 		    shadow
 	            animation="property: rotation; dur: 2000; from: 0 0 90; to: 0 360 90; loop: true; easing: linear;">
                 </a-cylinder>
+                <a-cylinder
+                    rickroll
+	            gps-entity-place="latitude: 37.373512; longitude: -122.032855;"
+                    multisrc="src0: #green; src1: #padenTop; src2: #padenBottom;"
+                    radius="4" height="0.5"
+	            rotation="0 0 90"
+		    shadow
+	            animation="property: rotation; dur: 2000; from: 0 0 90; to: 0 360 90; loop: true; easing: linear;">
+                </a-cylinder>	
+		<!--
 	        <a-camera gps-camera="simulateLatitude: 37.377300; simulateLongitude: -122.033200; gpsMinDistance: 10; gpsTimeInterval: 300;"></a-camera> 
+		-->
+		<a-camera gps-camera="gpsMinDistance: 10; gpsTimeInterval: 300;"></a-camera> 
 	    </a-scene>
     </body>
 </html>
