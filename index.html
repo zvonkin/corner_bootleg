@@ -29,12 +29,13 @@
 	    <!--gps-entity-place="latitude: 37.325283; longitude: -121.876636;" - Paden -->
 	    <!--gps-entity-place="latitude: 37.377037; longitude: -122.032998;" - Misha -->
 		<a-assets>
-			<img id="paden" src="./assets/paden.jpg"> 
+			<img id="padenTop" src="./assets/paden.jpg">
+			<img id="padenBottom" src="./assets/paden.jpg" style="transform:rotate(180deg);">
 		</a-assets>
                 <a-cylinder
                     rickroll
 	            gps-entity-place="latitude: 37.377037; longitude: -122.032998;"
-                    multisrc="src1: #paden;src2: #paden;"
+                    multisrc="src1: #padenTop; src2: #padenBottom;"
                     radius="4" height="0.5"
 	            rotation="0 0 90"
 		    shadow
