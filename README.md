@@ -1,4 +1,4 @@
-# corner_bootleg
-Speakeasy AR 
+# Corner Bootleg
+An AR solution for the bootlegged music releases. 
 
-Tutorial: https://medium.com/chialab-open-source/build-your-location-based-augmented-reality-web-app-c2442e716564
+Find a band member and get a record.
