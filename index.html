@@ -1,22 +1,46 @@
 <!--gps-entity-place="latitude: 37.377037; longitude: -122.032998;"-->
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Corner Bootleg</title>
-    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-</head>
-<script src="./script.js"></script>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Corner Bootleg</title>
+        <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    </head>
 
-<body style="margin: 0; overflow: hidden;">
-    <a-scene
-        cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;"
-        vr-mode-ui="enabled: false"
-	      embedded
-	      arjs="sourceType: webcam; debugUIEnabled: false;">			    
-        <a-camera gps-camera rotation-reader> </a-camera>
-    </a-scene>
-</body>
+    <script>
+    AFRAME.registerComponent("rickroll", {
+        init: function() {
+            this.el.addEventListener("click", () => {
+                window.open("https://www.youtube.com/watch?v=iik25wqIuFo");
+            });
+    }});
+    </script>
+	
+    <body style="margin: 0; overflow: hidden;">
+        <a-scene
+            cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;"
+            token.setAttribute();
+            raycaster="objects: [rickroll];"     
+            vr-mode-ui="enabled: false"
+            embedded
+            arjs="sourceType: webcam; debugUIEnabled: false;">			    
+                <a-cylinder
+                    rickroll    
+                    gps-entity-place="latitude: 37.377264; longitude: -122.033087;"
+                    material="src: ./assets/paden.jpg"
+                    radius="5" height="1" shadow>
+                    <a-animation
+                        attribute="rotation"
+                        dur="3000"
+                        from="0 180 90"
+                        to="360 180 90"
+                        repeat="indefinite"
+                        easing="linear">
+                    </a-animation>	
+                </a-cylinder>
+            <a-camera gps-camera rotation-reader> </a-camera>
+        </a-scene>
+    </body>
 </html>
