@@ -97,8 +97,7 @@ function buildScene(tokens) {
     
     let assets = document.querySelector('a-assets');
     tokens.forEach((token) => {
-        let entity = buildToken(token);
-        loadTokenAssets(token, assets);
+        let entity = buildToken(token, assets);
         scene.appendChild(entity);
     });
     scene.appendChild(assets);
