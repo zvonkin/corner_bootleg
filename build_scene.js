@@ -78,7 +78,7 @@ var buildToken = function (token, assets) {
   entity.setAttribute("height", "0.5");
   entity.setAttribute("rotation", "0 0 90");
   entity.setAttribute("shadow", "");
-  entity.setAttribute("animation", "property: rotation; dur: 2000; from: 0 0 90; to: 0 360 90; loop: true; easing: linear;");
+  entity.setAttribute("animation", "property: rotation; dur: 1500; from: 0 0 90; to: 0 360 90; loop: true; easing: linear;");
  
   if (token.link) {
     entity.setAttribute("clickable", `link: ${token.link};`);
