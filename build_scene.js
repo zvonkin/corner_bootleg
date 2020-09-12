@@ -19,7 +19,7 @@ var tokens = [
     imageBottom: './assets/paden-down.jpg',
     imageSide: './assets/gold.jpeg',
     location: {
-      lat: 37.377053, ,
+      lat: 37.377053,
       lng: -122.032437,
     },
     link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
