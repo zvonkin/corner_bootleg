@@ -43,7 +43,7 @@ var getAssetId = function (src) {
 
 var loadTokenAsset = function (id, src, assets) {
   let asset = document.createElement("img");
-  asset.setAttribute("id" id);
+  asset.setAttribute("id", id);
   asset.setAttribute("src", src);
   assets.appendChild(asset);
 }
