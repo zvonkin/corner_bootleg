@@ -22,7 +22,7 @@ var tokens = [
       lat: 37.377053,
       lng: -122.032437,
     },
-    link: "https\://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
     name: "Misha",
@@ -33,7 +33,7 @@ var tokens = [
       lat: 37.376723,
       lng: -122.033664,
     },
-    link: "https\://www.youtube.com/watch?v=2-8gsWZqDBM",
+    link: "https://www.youtube.com/watch?v=2-8gsWZqDBM",
   }, 
 ];
 
@@ -81,7 +81,7 @@ var buildToken = function (token, assets) {
   entity.setAttribute("animation", "property: rotation; dur: 2000; from: 0 0 90; to: 0 360 90; loop: true; easing: linear;");
  
   if (token.link) {
-    entity.setAttribute("clickable", token.link);
+    entity.setAttribute("clickable", `link: ${token.link};`);
   }
   
   let textureSources = setTextures(token, assets);
