@@ -17,7 +17,7 @@ var tokens = [
     name: 'Paden',
     imageTop: './assets/paden.jpg'
     imageBottom: './assets/paden-down.jpg'
-    imageSide: './assets/gold.jpg'
+    imageSide: './assets/gold.jpeg'
     location: {
       lat: 37.377053, ,
       lng: -122.032437,
