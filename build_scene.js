@@ -100,5 +100,6 @@ function buildScene(tokens) {
         let entity = buildToken(token, assets);
         scene.appendChild(entity);
     });
+
     scene.appendChild(assets);
 }
