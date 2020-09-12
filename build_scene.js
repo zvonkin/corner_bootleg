@@ -52,17 +52,17 @@ var setTextures = function (token, assets) {
   let textureSources = ""
   if (token.imageSide) {
     let asset_id = getAssetId(token.imageSide);
-    textureSources.concat(`src0: #${asset_id};`);
+    textureSources = textureSources.concat(`src0: #${asset_id};`);
     loadTokenAsset(asset_id, token.imageSide, assets);
   }
   if (token.imageTop) {
     let asset_id = getAssetId(token.imageTop);
-    textureSources.concat(`src1: #${asset_id};`);
+    textureSources = textureSources.concat(`src1: #${asset_id};`);
     loadTokenAsset(asset_id, token.imageTop, assets);
   }
   if (token.imageBottom) {
     let asset_id = getAssetId(token.imageBottom);
-    textureSources.concat(`src2: #${asset_id};`);
+    textureSources = textureSources.concat(`src2: #${asset_id};`);
     loadTokenAsset(asset_id, token.imageBottom, assets);
   } 
   return textureSources;
