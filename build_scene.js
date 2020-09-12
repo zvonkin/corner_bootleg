@@ -22,7 +22,7 @@ var tokens = [
       lat: 37.377053,
       lng: -122.032437,
     },
-    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    link: "https\://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
     name: "Misha",
@@ -33,7 +33,7 @@ var tokens = [
       lat: 37.376723,
       lng: -122.033664,
     },
-    link: "https://www.youtube.com/watch?v=2-8gsWZqDBM",
+    link: "https\://www.youtube.com/watch?v=2-8gsWZqDBM",
   }, 
 ];
 
