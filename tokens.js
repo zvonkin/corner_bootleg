@@ -1,4 +1,4 @@
-var tokens = [
+export var tokens = [
   {
     name: "Paden",
     imageTop: "./assets/paden.jpg",
