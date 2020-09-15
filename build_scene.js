@@ -1,5 +1,71 @@
-import * as componets from "./components.js";
-import {tokens} from ".tokens.js";
+AFRAME.registerComponent("click", {
+  schema: {
+    link: {type: "string", default: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"}
+  },
+  init: function() {
+    this.el.addEventListener("click", () => {
+      window.open(this.data.link);
+    });
+}});
+
+AFRAME.registerComponent("drag-rotate", {
+    schema : { speed : {default:1}},
+    init : function() {
+        this.ifMouseDown = false;
+        this.x_cord = 0;
+        this.y_cord = 0;
+        document.addEventListener('mousedown',this.OnDocumentMouseDown.bind(this));
+        document.addEventListener('mouseup',this.OnDocumentMouseUp.bind(this));
+        document.addEventListener('mousemove',this.OnDocumentMouseMove.bind(this));
+    },
+    OnDocumentMouseDown : function(event){
+        this.ifMouseDown = true;
+        this.x_cord = event.clientX;
+        this.y_cord = event.clientY;
+    },
+    OnDocumentMouseUp : function(){
+        this.ifMouseDown = false;
+    },
+    OnDocumentMouseMove : function(event) {
+        if(this.ifMouseDown) {
+            var temp_x = event.clientX-this.x_cord;
+            var temp_y = event.clientY-this.y_cord;
+            if(Math.abs(temp_y)<Math.abs(temp_x)) {
+                this.el.object3D.rotateY(temp_x*this.data.speed/1000);
+            } else {
+                this.el.object3D.rotateX(temp_y*this.data.speed/1000);
+            }
+        this.x_cord = event.clientX;
+        this.y_cord = event.clientY;
+        }
+    }
+});
+
+
+export var tokens = [
+  {
+    name: "Paden",
+    imageTop: "./assets/paden.jpg",
+    imageBottom: "./assets/paden-down.jpg",
+    imageSide: "./assets/gold.jpeg",
+    location: {
+      lat: 37.377053,
+      lng: -122.032437,
+    },
+    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  },
+  {
+    name: "Misha",
+    imageTop: "./assets/misha.jpg",
+    imageBottom: "./assets/misha-down.jpg",
+    imageSide: "./assets/green.jpg",
+    location: {
+      lat: 37.376723,
+      lng: -122.033664,
+    },
+    link: "https://www.youtube.com/watch?v=2-8gsWZqDBM",
+  }, 
+];
 
 window.onload = () => {
     buildScene(tokens);
