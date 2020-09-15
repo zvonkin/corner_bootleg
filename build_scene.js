@@ -1,16 +1,8 @@
+import * as componets from './components.js';
+
 window.onload = () => {
     buildScene(tokens);
 };
-
-AFRAME.registerComponent("clickable", {
-  schema: {
-    link: {type: "string", default: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"}
-  },
-  init: function() {
-    this.el.addEventListener("click", () => {
-      window.open(this.data.link);
-    });
-}});
 
 var tokens = [
   {
@@ -79,7 +71,8 @@ var buildToken = function (token, assets) {
   entity.setAttribute("rotation", "0 0 90");
   entity.setAttribute("shadow", "");
   entity.setAttribute("animation", "property: rotation; dur: 3000; from: 0 0 90; to: 0 360 90; loop: true; easing: linear;");
- 
+  entity.setAttribute("drag-rotate", "");
+    
   if (token.link) {
     entity.setAttribute("clickable", `link: ${token.link};`);
   }
