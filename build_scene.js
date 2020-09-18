@@ -8,40 +8,6 @@ AFRAME.registerComponent("click", {
     });
 }});
 
-AFRAME.registerComponent("drag-rotate", {
-    schema : { speed : {default:1}},
-    init : function() {
-        this.ifMouseDown = false;
-        this.x_cord = 0;
-        this.y_cord = 0;
-        document.addEventListener('mousedown',this.OnDocumentMouseDown.bind(this));
-        document.addEventListener('mouseup',this.OnDocumentMouseUp.bind(this));
-        document.addEventListener('mousemove',this.OnDocumentMouseMove.bind(this));
-    },
-    OnDocumentMouseDown : function(event){
-        this.ifMouseDown = true;
-        this.x_cord = event.clientX;
-        this.y_cord = event.clientY;
-    },
-    OnDocumentMouseUp : function(){
-        this.ifMouseDown = false;
-    },
-    OnDocumentMouseMove : function(event) {
-        if(this.ifMouseDown) {
-            var temp_x = event.clientX-this.x_cord;
-            var temp_y = event.clientY-this.y_cord;
-            if(Math.abs(temp_y)<Math.abs(temp_x)) {
-                this.el.object3D.rotateY(temp_x*this.data.speed/1000);
-            } else {
-                this.el.object3D.rotateX(temp_y*this.data.speed/1000);
-            }
-        this.x_cord = event.clientX;
-        this.y_cord = event.clientY;
-        }
-    }
-});
-
-
 export var tokens = [
   {
     name: "Paden",
@@ -113,7 +79,6 @@ var buildToken = function (token, assets) {
   entity.setAttribute("rotation", "0 0 90");
   entity.setAttribute("shadow", "");
   entity.setAttribute("animation", "property: rotation; dur: 3000; from: 0 0 90; to: 0 360 90; loop: true; easing: linear;");
-  entity.setAttribute("drag-rotate", "");
     
   if (token.link) {
     entity.setAttribute("clickable", `link: ${token.link};`);
